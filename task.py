@@ -116,11 +116,11 @@ def minimal_task():
         div = "//*[@id='agency-tiles-widget']/div/div[1]/div[1]/div/div/div/div[2]/a"
         click_button(div)
         browser_lib.set_browser_implicit_wait(5)
-        max_pag = get_max_pag()
-        for i in range(int(max_pag)):
-            print(individual_investment(path))
-            time.sleep(5)
-        time.sleep(5)
+        #max_pag = get_max_pag()
+        #for i in range(int(max_pag)):
+        #    print(individual_investment(path))
+        #    time.sleep(5)
+        #time.sleep(5)
     finally:
         close_the_website()
 if __name__ == "__main__":
