@@ -4,14 +4,14 @@ from RPA.Excel.Files import Files
 from RPA.Tables import Tables
 from datetime import datetime
 import time
+import os
 browser_lib = Selenium()
-browser_lib2=Selenium()
 lib = Files()
 table = Tables()
-dwPath = "output"
+dwPath = f"output/"
 def open_the_website(url):
     #download_preferences = {"download.default_directory": dwPath}
-    #browser_lib.set_download_directory(directory=dwPath)
+    browser_lib.set_download_directory(os.path.join(os.getcwd(),dwPath)
     browser_lib.open_available_browser(url)
 def close_the_website():
     browser_lib.close_browser()
