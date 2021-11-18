@@ -39,16 +39,17 @@ def write_excel_worksheet(path, nameW, result):
     tablaExcel = table.create_table(data=lista, columns=(headers))
     lib.append_rows_to_worksheet(tablaExcel, nameW, headers)
     lib.save_workbook(path)
+    return len(result)
 def close_excel_file(path):
     lib = Files()
     lib.close_workbook(path)
 def get_max_pag():
     pages = "xpath://*[@id='investments-table-object_paginate']/span/a"
     listaPAgs = browser_lib.find_elements(pages)
-    time.sleep(30)
+    time.sleep(10)
     span = "/span/a[%s]" % (len(listaPAgs))
     element = "xpath://*[@id='investments-table-object_paginate']%s" % (span)
-    time.sleep(30)
+    time.sleep(10)
     txtMaxPag = browser_lib.find_element(element).text
     return txtMaxPag
 def get_headers():
@@ -105,21 +106,20 @@ def minimal_task():
     try:
         path = "output/amounts.xlsx"      
         open_the_website("https://itdashboard.gov/")
-        browser_lib.set_browser_implicit_wait(15)
+        browser_lib.set_browser_implicit_wait(5)
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
-        browser_lib.set_browser_implicit_wait(15)
+        browser_lib.set_browser_implicit_wait(5)
         totals = agency_totals()
-        write_excel_worksheet(path, 'Agencies', totals)
-        browser_lib.set_browser_implicit_wait(15)
+        print(write_excel_worksheet(path, 'Agencies', totals))
+        browser_lib.set_browser_implicit_wait(5)
         div = "//*[@id='agency-tiles-widget']/div/div[1]/div[1]/div/div/div/div[2]/a"
         click_button(div)
-        #time.sleep(5)
-        browser_lib.set_browser_implicit_wait(15)
+        browser_lib.set_browser_implicit_wait(5)
         max_pag = get_max_pag()
         for i in range(int(max_pag)):
             print(individual_investment(path))
-            time.sleep(10)
-        time.sleep(10)
+            time.sleep(5)
+        time.sleep(5)
     finally:
         close_the_website()
 if __name__ == "__main__":
