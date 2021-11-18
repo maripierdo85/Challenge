@@ -44,6 +44,7 @@ def close_excel_file(path):
     lib = Files()
     lib.close_workbook(path)
 def get_max_pag():
+    browser_lib.wait_until_page_contains("Next")
     pages = "xpath://*[@id='investments-table-object_paginate']/span/a"
     listaPAgs = browser_lib.find_elements(pages)
     time.sleep(30)
@@ -104,7 +105,7 @@ def individual_investment(path):
     #click_button("//*[@id='investments-table-object_next']")
 def minimal_task():
     try:
-        path = "output/amounts.xlsx"      
+        path = f"output/amounts.xlsx"      
         open_the_website("https://itdashboard.gov/")
         browser_lib.set_browser_implicit_wait(5)
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
