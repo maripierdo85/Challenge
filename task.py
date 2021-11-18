@@ -10,9 +10,9 @@ lib = Files()
 table = Tables()
 dwPath = "output"
 def open_the_website(url):
-    download_preferences = {"download.default_directory": dwPath}
-    browser_lib.set_download_directory(directory=dwPath)
-    browser_lib.open_available_browser(url, preferences=download_preferences)
+    #download_preferences = {"download.default_directory": dwPath}
+    #browser_lib.set_download_directory(directory=dwPath)
+    browser_lib.open_available_browser(url)
 def close_the_website():
     browser_lib.close_browser()
 def click_button(xpath):
@@ -91,7 +91,7 @@ def individual_investment(path):
         for h in listaFilasLinks:
             href = h.get_attribute('href')
             time.sleep(5)
-            browser_lib2.op
+            #browser_lib2.op
             open_the_website(href)
             time.sleep(15)
             element5 = "xpath://*[@id='business-case-pdf']/a"
