@@ -46,10 +46,10 @@ def close_excel_file(path):
 def get_max_pag():
     pages = "xpath://*[@id='investments-table-object_paginate']/span/a"
     listaPAgs = browser_lib.find_elements(pages)
-    time.sleep(10)
+    time.sleep(30)
     span = "/span/a[%s]" % (len(listaPAgs))
     element = "xpath://*[@id='investments-table-object_paginate']%s" % (span)
-    time.sleep(10)
+    time.sleep(30)
     txtMaxPag = browser_lib.find_element(element).text
     return txtMaxPag
 def get_headers():
