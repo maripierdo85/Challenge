@@ -95,9 +95,9 @@ def individual_investment(path):
     lib.open_workbook(path)
     time.sleep(1)
     lib.append_rows_to_worksheet(tablaExcel, "Investments", headers)
-    time.sleep(1)
+    time.sleep(10)
     lib.save_workbook(path)
-    time.sleep(1)
+    time.sleep(10)
     filasLinks = []
     if len(listaFilasLinks)>0:
         for h in listaFilasLinks:
@@ -127,7 +127,7 @@ def minimal_task():
         browser_lib.set_browser_implicit_wait(5)
         div = "//*[@id='agency-tiles-widget']/div/div[1]/div[1]/div/div/div/div[2]/a"
         click_button(div)
-        browser_lib.set_browser_implicit_wait(5)
+        browser_lib.set_browser_implicit_wait(25)
         #max_pag = get_max_pag()
         #for i in range(int(max_pag)):
         print(individual_investment(path))
