@@ -44,7 +44,7 @@ def close_excel_file(path):
     lib = Files()
     lib.close_workbook(path)
 def get_max_pag():
-    browser_lib.wait_until_page_contains("Next")
+    browser_lib.wait_until_page_contains("Next",'15')
     pages = "xpath://*[@id='investments-table-object_paginate']/span/a"
     listaPAgs = browser_lib.find_elements(pages)
     time.sleep(30)
