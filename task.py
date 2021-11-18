@@ -130,8 +130,8 @@ def minimal_task():
         browser_lib.set_browser_implicit_wait(5)
         #max_pag = get_max_pag()
         #for i in range(int(max_pag)):
-        #    print(individual_investment(path))
-        #    time.sleep(5)
+        print(individual_investment(path))
+        time.sleep(15)
         #time.sleep(5)
     finally:
         close_the_website()
