@@ -117,7 +117,7 @@ def minimal_task():
         path = f"output/amounts.xlsx"      
         open_the_website("https://itdashboard.gov/")
         #browser_lib.set_browser_implicit_wait(30)
-        browser_lib.wait_until_page_contains('DIVE IN')
+        #browser_lib.wait_until_page_contains('DIVE IN')
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
         browser_lib.set_browser_implicit_wait(35)
         totals = agency_totals()
