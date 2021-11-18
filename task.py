@@ -10,7 +10,6 @@ lib = Files()
 table = Tables()
 dwPath = f"output/"
 def open_the_website(url):
-    #download_preferences = {"download.default_directory": dwPath}
     browser_lib.set_download_directory(os.path.join(os.getcwd(),dwPath))
     browser_lib.open_available_browser(url)
 def close_the_website():
@@ -112,13 +111,11 @@ def individual_investment(path):
             browser_lib.close_browser()
             time.sleep(20)  
     time.sleep(20)
-    #click_button("//*[@id='investments-table-object_next']")
 def minimal_task():
     try:
         path = f"output/amounts.xlsx"      
         open_the_website("https://itdashboard.gov/")
         browser_lib.set_browser_implicit_wait(30)
-        #browser_lib.wait_until_page_contains('DIVE IN')
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
         browser_lib.set_browser_implicit_wait(35)
         totals = agency_totals()
@@ -128,11 +125,8 @@ def minimal_task():
         div = "//*[@id='agency-tiles-widget']/div/div[1]/div[1]/div/div/div/div[2]/a"
         click_button(div)
         browser_lib.set_browser_implicit_wait(25)
-        #max_pag = get_max_pag()
-        #for i in range(int(max_pag)):
         print(individual_investment(path))
         time.sleep(15)
-        #time.sleep(5)
     finally:
         close_the_website()
 if __name__ == "__main__":
