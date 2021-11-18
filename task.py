@@ -19,6 +19,7 @@ def click_button(xpath):
     dive_element = "xpath:%s" % (xpath)
     browser_lib.find_element(dive_element).click()
 def agency_totals():
+    time.sleep(30)
     while True:
         try:
             lista = browser_lib.find_elements("xpath://div[@id='agency-tiles-widget']")
@@ -116,7 +117,7 @@ def minimal_task():
     try:
         path = f"output/amounts.xlsx"      
         open_the_website("https://itdashboard.gov/")
-        #browser_lib.set_browser_implicit_wait(30)
+        browser_lib.set_browser_implicit_wait(30)
         #browser_lib.wait_until_page_contains('DIVE IN')
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
         browser_lib.set_browser_implicit_wait(35)
