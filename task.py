@@ -36,10 +36,14 @@ def write_excel_worksheet(path, nameW, result):
             amount = result[i-1]
             lista.append([date, agencies, amount])
     headers = ['Datetime', 'Agency', 'Amount']
+    browser_lib.set_browser_implicit_wait(5)
     tablaExcel = table.create_table(data=lista, columns=(headers))
+    browser_lib.set_browser_implicit_wait(5)
     lib.append_rows_to_worksheet(tablaExcel, nameW, headers)
+    browser_lib.set_browser_implicit_wait(5)
     lib.save_workbook(path)
-    return len(result)
+    browser_lib.set_browser_implicit_wait(5)
+    return [len(result),lista]
 def close_excel_file(path):
     lib = Files()
     lib.close_workbook(path)
