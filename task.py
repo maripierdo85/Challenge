@@ -115,6 +115,7 @@ def minimal_task():
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
         browser_lib.set_browser_implicit_wait(5)
         totals = agency_totals()
+        print("Totals",totals)
         print(write_excel_worksheet(path, 'Agencies', totals))
         browser_lib.set_browser_implicit_wait(5)
         div = "//*[@id='agency-tiles-widget']/div/div[1]/div[1]/div/div/div/div[2]/a"
