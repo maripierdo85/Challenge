@@ -101,7 +101,7 @@ def individual_investment(path):
             browser_lib.close_browser()
             time.sleep(20)  
     time.sleep(20)
-    click_button("//*[@id='investments-table-object_next']")
+    #click_button("//*[@id='investments-table-object_next']")
 def minimal_task():
     try:
         path = "output/amounts.xlsx"      
