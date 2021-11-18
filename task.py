@@ -113,7 +113,7 @@ def minimal_task():
         open_the_website("https://itdashboard.gov/")
         browser_lib.set_browser_implicit_wait(5)
         click_button("//*[@id='node-23']/div/div/div/div/div/div/div/a")
-        browser_lib.set_browser_implicit_wait(5)
+        browser_lib.set_browser_implicit_wait(25)
         totals = agency_totals()
         print("Totals",totals)
         print(write_excel_worksheet(path, 'Agencies', totals))
