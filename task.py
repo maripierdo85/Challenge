@@ -19,7 +19,12 @@ def click_button(xpath):
     dive_element = "xpath:%s" % (xpath)
     browser_lib.find_element(dive_element).click()
 def agency_totals():
-    lista = browser_lib.find_elements("xpath://div[@id='agency-tiles-widget']")
+    while True:
+        try:
+            lista = browser_lib.find_elements("xpath://div[@id='agency-tiles-widget']")
+            break
+        except:
+            pass
     for symbol in lista:
         element_text = symbol.text
         formatted = element_text.split("\n")
