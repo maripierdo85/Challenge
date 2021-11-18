@@ -11,7 +11,7 @@ table = Tables()
 dwPath = f"output/"
 def open_the_website(url):
     #download_preferences = {"download.default_directory": dwPath}
-    browser_lib.set_download_directory(os.path.join(os.getcwd(),dwPath)
+    browser_lib.set_download_directory(os.path.join(os.getcwd(),dwPath))
     browser_lib.open_available_browser(url)
 def close_the_website():
     browser_lib.close_browser()
